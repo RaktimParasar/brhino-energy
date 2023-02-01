@@ -1,7 +1,9 @@
 :root {
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+      "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+   --primary-white: hsl(0, 0%, 100%);
+   --secondary-indigo: hsl(242, 47%, 34%);
+   --transition-ease: all 400ms ease-in-out;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -14,7 +16,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 html,
@@ -98,12 +100,12 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -118,28 +120,49 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+   display: block;
 }
 body {
-  line-height: 1;
-  font-family: var(--font-mono);
+   line-height: 1;
+   font-family: var(--font-mono);
 }
 ol,
 ul {
-  list-style: none;
+   list-style: none;
 }
 blockquote,
 q {
-  quotes: none;
+   quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
-  content: none;
+   content: "";
+   content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+/* react-slick slider styles */
+
+.slick-dots .slick-active > div {
+   background-color: var(--primary-white);
+}
+
+.slider-tabs .slick-slide {
+   padding-bottom: 50px;
+}
+
+.slick-dots > ul {
+   transform: translateY(9rem);
+}
+
+.slick-dots > ul li button:before {
+   color: var(--primary-white) !important;
+   width: 25px;
+   height: 25px;
+   font-size: 8px;
 }

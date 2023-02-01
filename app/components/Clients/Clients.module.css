@@ -1,0 +1,36 @@
+.clients_grid {
+   width: 80%;
+   padding: 70px 0 0 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 30px;
+}
+
+.clients_card {
+   height: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.image_wrapper {
+   flex: 1;
+   max-width: 100px;
+   height: 100px;
+}
+
+.image_wrapper img {
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+   border-radius: 8px;
+   max-width: 100%;
+}
+
+.clients_grid h3 {
+   flex: 1;
+   font-weight: 600;
+   font-size: 1rem;
+   line-height: 22px;
+   max-width: 300px;
+}
