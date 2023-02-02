@@ -56,3 +56,31 @@ export const CLIENTS = [
       logo: "/images/manpower.webp",
    },
 ];
+
+export const TEAM = [
+   {
+      name: "Bhaskar Jyoti Bora",
+      designation: "CEO, Opeartions",
+      imageSrc: "/images/team-1.jpg",
+   },
+   {
+      name: "Ajay Kr. Karki Chetry",
+      designation: "Operational Manager",
+      imageSrc: "/images/team-2.jpg",
+   },
+   {
+      name: "Sarah Johnson",
+      designation: "Chief Operating Officer",
+      imageSrc: "/images/team-3.jpg",
+   },
+   {
+      name: "Matthew Brown",
+      designation: "Senior Product Manager",
+      imageSrc: "/images/team-4.jpg",
+   },
+   {
+      name: "Jason Davis",
+      designation: "Director of Marketing",
+      imageSrc: "/images/team-5.jpg",
+   },
+];

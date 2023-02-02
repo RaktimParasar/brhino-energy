@@ -2,13 +2,13 @@ import type { NextPage } from "next";
 
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
+import { Inter, Poppins } from "@next/font/google";
 
 import { useState, Suspense } from "react";
 
 import Navbar from "@components/Navbar/Navbar";
 import ServicesCard from "@components/ServicesCard/ServicesCard";
-import { CARD_CONTENTS, PROJECTS, CLIENTS } from "../app/utils/constants";
+import { CARD_CONTENTS, PROJECTS, CLIENTS, TEAM } from "../app/utils/constants";
 import SliderComp from "@components/Slider/SliderComp";
 import Clients from "@components/Clients/Clients";
 
@@ -16,6 +16,11 @@ import styles from "../styles/Home.module.css";
 import AboutUs from "@components/AboutUs/AboutUs";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const poppins = Poppins({
+   subsets: ["latin"],
+   weight: ["400", "600"],
+});
 
 const Home: NextPage = () => {
    const renderServicesCards = () => {
@@ -100,6 +105,37 @@ const Home: NextPage = () => {
                </div>
             </section>
             <AboutUs />
+            <section className={styles.clients_container}>
+               <div className={styles.services_wrapper}>
+                  <h3>Meet our Team</h3>
+                  <p>
+                     Our team is a diverse group of professionals with unique skills and expertise. Together
+                     we work towards a common goal and strive for excellence in all we do. Get to know the
+                     brilliant minds behind our success, the talented individuals who bring our vision to
+                     life, and the passionate people who make up the heart of our organization. Join us as we
+                     introduce you to the dedicated individuals who drive our success and make it all
+                     possible.
+                  </p>
+                  <div className={styles.team_container}>
+                     {TEAM.map(({ name, designation, imageSrc }, index) => (
+                        <div className={styles.team_card} key={`${index}-${imageSrc}`}>
+                           <Image
+                              src={imageSrc}
+                              className={styles.team_image}
+                              alt={name}
+                              width={100}
+                              height={100}
+                              priority
+                           />
+                           <div className={styles.team_contents}>
+                              <h3 className={poppins.className}>{name}</h3>
+                              <p>{designation}</p>
+                           </div>
+                        </div>
+                     ))}
+                  </div>
+               </div>
+            </section>
          </main>
       </>
    );
