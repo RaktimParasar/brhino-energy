@@ -2,18 +2,24 @@ import type { NextPage } from "next";
 
 import Head from "next/head";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Inter, Poppins } from "@next/font/google";
 
 import { useState, Suspense } from "react";
 
 import Navbar from "@components/Navbar/Navbar";
-import ServicesCard from "@components/ServicesCard/ServicesCard";
 import { CARD_CONTENTS, PROJECTS, CLIENTS, TEAM } from "../app/utils/constants";
 import SliderComp from "@components/Slider/SliderComp";
 import Clients from "@components/Clients/Clients";
 
 import styles from "../styles/Home.module.css";
 import AboutUs from "@components/AboutUs/AboutUs";
+import ContactUs from "@components/ContactUs/ContactUs";
+import Link from "next/link";
+import { Facebook, Linkedin, Twitter } from "@components/Icons/Icons";
+import QuoteForm from "@components/QuoteForm/QuoteForm";
+
+const ServicesCard = dynamic(() => import("@components/ServicesCard/ServicesCard"));
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -136,6 +142,25 @@ const Home: NextPage = () => {
                   </div>
                </div>
             </section>
+            <ContactUs />
+            <QuoteForm />
+            <footer className={styles.footer_container}>
+               <div className={styles.socials}>
+                  <Link href="javascript:void(0)">
+                     <Facebook color={"var(--primary-white)"} />
+                  </Link>
+                  <Link href="javascript:void(0)">
+                     <Twitter color={"var(--primary-white)"} />
+                  </Link>
+                  <Link href="javascript:void(0)">
+                     <Linkedin color={"var(--primary-white)"} />
+                  </Link>
+               </div>
+               <div className={styles.copyright_info}>
+                  <span className={styles.copyright}>&copy;</span> 2023 All Rights Reserved by Brhino Energy
+                  Services
+               </div>
+            </footer>
          </main>
       </>
    );
