@@ -143,7 +143,18 @@ const Home: NextPage = () => {
                </div>
             </section>
             <ContactUs />
-            <QuoteForm />
+            <section className={styles.form_container}>
+               <div className={styles.services_wrapper}>
+                  <h3>Get a quote</h3>
+                  <p>
+                     Get a personalized quote for your project by providing us with some basic information.
+                     Our team is ready to help bring your vision to life. We provide tailored quotes that meet
+                     your requirements and budget. Contact us today to get started and let us prioritize your
+                     satisfaction.
+                  </p>
+                  <QuoteForm />
+               </div>
+            </section>
             <footer className={styles.footer_container}>
                <div className={styles.socials}>
                   <Link href="javascript:void(0)">
