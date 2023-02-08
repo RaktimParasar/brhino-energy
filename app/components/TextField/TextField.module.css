@@ -1,0 +1,56 @@
+.text_field_root {
+   position: relative;
+   width: 100%;
+}
+
+.text_field_root label {
+   position: absolute;
+   font-size: 1rem;
+   left: 0;
+   top: 50%;
+   transform: translateY(-50%);
+   background-color: #0a1929;
+   color: rgba(255, 255, 255, 0.5);
+   padding: 0 0.3rem;
+   margin: 0 0.5rem;
+   transition: 0.2s ease-out;
+   transform-origin: left top;
+   pointer-events: none;
+   letter-spacing: 0.5px;
+}
+
+.text_field_root input,
+.text_field_root textarea {
+   width: 100%;
+   font-size: 14px;
+   outline: none;
+   border: 1px solid rgba(255, 255, 255, 0.5);
+   border-radius: 5px;
+   padding: 1rem 0.7rem;
+   color: rgba(255, 255, 255, 0.8);
+   transition: 0.1s ease-out;
+   background-color: transparent;
+}
+
+.text_field_root textarea {
+   resize: none;
+}
+
+.text_field_root input:focus,
+.text_field_root textarea:focus {
+   border-color: #6200ee;
+}
+
+.text_field_root input:focus + label,
+.text_field_root textarea:focus + label {
+   color: #6200ee;
+   background-color: #0a1929;
+   top: 0;
+   transform: translateY(-50%) scale(0.9);
+}
+
+.text_field_root input:not(:placeholder-shown) + label,
+.text_field_root textarea:not(:placeholder-shown) + label {
+   top: 0;
+   transform: translateY(-50%) scale(0.9);
+}

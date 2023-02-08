@@ -1,67 +1,108 @@
 import { useState, useEffect } from "react";
 
+import { ArrowRight, Tick } from "@components/Icons/Icons";
+import TextField from "@components/TextField/TextField";
+
 import styles from "./QuoteForm.module.css";
 
 interface QuoteFormProps {}
 
-const QuoteForm: React.FC<QuoteFormProps> = () => {
+type FormState = {
+   firstName: string;
+   lastName: string;
+   email: string;
+   phone: string;
+   comment: string;
+};
+
+const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
+   const [guestQuoteData, setGuestQuoteData] = useState<FormState>({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      comment: "",
+   });
+
+   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+
+   const { email, phone, firstName, lastName, comment } = guestQuoteData;
+
+   const handleInputChange = (
+      e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
+   ) => {
+      const {
+         target: { name, value },
+      } = e;
+      setGuestQuoteData((guestQuoteData) => ({ ...guestQuoteData, [name]: value }));
+   };
+
+   const handleClear = () => {
+      setGuestQuoteData({
+         firstName: "",
+         lastName: "",
+         email: "",
+         phone: "",
+         comment: "",
+      });
+   };
+
+   const handleOnSubmit = () => {
+      console.log(guestQuoteData);
+      handleClear && handleClear();
+   };
+
    return (
       <div className={styles.form_wrapper}>
          <div className={styles.form_box}>
             <div>
-               {/* <TextField
-                  id="outlined-basic"
+               <TextField
                   label="First Name"
-                  variant="outlined"
-                  required
-                  error={false}
-                  helperText=""
-                  fullWidth
-               /> */}
-               {/* <TextField
-                  id="outlined-basic"
-                  label="Last Name"
-                  variant="outlined"
-                  required
-                  error={false}
-                  helperText=""
-                  fullWidth
-               /> */}
-            </div>
-            <div>
-               {/* <TextField
-                  id="outlined-basic"
-                  label="Email"
-                  variant="outlined"
-                  required
-                  error={false}
-                  helperText=""
-                  fullWidth
+                  type="text"
+                  error="hello"
+                  name="firstName"
+                  value={firstName}
+                  onChange={(e) => handleInputChange(e)}
                />
                <TextField
-                  id="outlined-basic"
-                  label="Phone"
-                  variant="outlined"
-                  required
-                  error={false}
-                  helperText=""
-                  fullWidth
-               /> */}
+                  label="Last Name"
+                  type="text"
+                  name="lastName"
+                  value={lastName}
+                  onChange={(e) => handleInputChange(e)}
+               />
             </div>
             <div>
-               {/* <TextField
-                  id="outlined-multiline-static"
+               <TextField
+                  label="Email"
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => handleInputChange(e)}
+               />
+               <TextField
+                  label="Phone"
+                  type="tel"
+                  name="phone"
+                  value={phone}
+                  onChange={(e) => handleInputChange(e)}
+               />
+            </div>
+            <div>
+               <TextField
                   label="Comment"
-                  variant="outlined"
+                  type="text"
                   multiline
-                  minRows={5}
-                  required
-                  error={false}
-                  helperText=""
-                  fullWidth
-               /> */}
+                  maxRows={7}
+                  name="comment"
+                  value={comment}
+                  onChange={(e) => handleInputChange(e)}
+               />
             </div>
          </div>
+         <button data-submit="false" onClick={handleOnSubmit}>
+            Submit <ArrowRight color={"var(--primary-white)"} />
+         </button>
       </div>
    );
 };
