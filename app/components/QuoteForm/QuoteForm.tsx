@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 
+import { notification } from "antd";
+
 import { ArrowRight, Tick } from "@components/Icons/Icons";
 import TextField from "@components/TextField/TextField";
 
 import styles from "./QuoteForm.module.css";
+import { sendContactForm } from "../../lib/api";
+import axios from "axios";
 
 interface QuoteFormProps {}
 
@@ -24,9 +28,16 @@ const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
       comment: "",
    });
 
-   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+   const [loading, setLoading] = useState<boolean>(false);
+   const [isSubmitted, setSubmitted] = useState<boolean>(false);
 
    const { email, phone, firstName, lastName, comment } = guestQuoteData;
+
+   // const getLocation = async () => {
+   //    const geoInfo = await axios.get("http://ip-api.com/json");
+   //    console.log(geoInfo);
+   // };
+   // getLocation();
 
    const handleInputChange = (
       e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
@@ -47,9 +58,25 @@ const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
       });
    };
 
-   const handleOnSubmit = () => {
-      console.log(guestQuoteData);
-      handleClear && handleClear();
+   const handleOnSubmit = async () => {
+      setLoading(true);
+      try {
+         await sendContactForm(guestQuoteData);
+         setSubmitted(true);
+         setLoading(false);
+         handleClear && handleClear();
+         notification["success"]({
+            message: "Form submitted successfully 👍🏻",
+         });
+      } catch (error) {
+         if (error) {
+            setLoading(false);
+            setSubmitted(true);
+            notification["error"]({
+               message: "Failed to submit form 😰",
+            });
+         }
+      }
    };
 
    return (
@@ -100,8 +127,17 @@ const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
                />
             </div>
          </div>
-         <button data-submit="false" onClick={handleOnSubmit}>
-            Submit <ArrowRight color={"var(--primary-white)"} />
+         <button data-submit="false" onClick={handleOnSubmit} disabled={loading}>
+            {isSubmitted ? (
+               <>
+                  <Tick color="var(--primary-white)" />
+                  Submitted
+               </>
+            ) : (
+               <>
+                  Submit <ArrowRight color="var(--primary-white)" />
+               </>
+            )}
          </button>
       </div>
    );
