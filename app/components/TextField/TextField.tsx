@@ -17,6 +17,7 @@ interface TextFieldProps {
    error?: string;
    name?: string;
    value?: string | number;
+   disabled?: boolean;
    onChange?: (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
@@ -27,6 +28,7 @@ const TextField: React.FC<TextFieldProps> = ({
    maxRows,
    name,
    value,
+   disabled,
    onChange,
 }): JSX.Element => {
    const handleInputChange = (
@@ -45,6 +47,7 @@ const TextField: React.FC<TextFieldProps> = ({
                   required
                   name={name}
                   value={value}
+                  disabled={disabled}
                   onChange={handleInputChange}
                   className={poppins.className}
                />
@@ -59,6 +62,7 @@ const TextField: React.FC<TextFieldProps> = ({
                   required
                   name={name}
                   value={value}
+                  disabled={disabled}
                   onChange={handleInputChange}
                   className={poppins.className}
                />

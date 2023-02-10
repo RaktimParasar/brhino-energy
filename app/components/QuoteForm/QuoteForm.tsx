@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { notification } from "antd";
 
@@ -7,7 +7,7 @@ import TextField from "@components/TextField/TextField";
 
 import styles from "./QuoteForm.module.css";
 import { sendContactForm } from "../../lib/api";
-import axios from "axios";
+// import axios from "axios";
 
 interface QuoteFormProps {}
 
@@ -28,10 +28,17 @@ const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
       comment: "",
    });
 
+   const [error, setError] = useState({
+      status: false,
+      message: "",
+      emailError: "",
+   });
+
    const [loading, setLoading] = useState<boolean>(false);
    const [isSubmitted, setSubmitted] = useState<boolean>(false);
 
    const { email, phone, firstName, lastName, comment } = guestQuoteData;
+   const { status, message, emailError } = error;
 
    // const getLocation = async () => {
    //    const geoInfo = await axios.get("http://ip-api.com/json");
@@ -48,6 +55,33 @@ const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
       setGuestQuoteData((guestQuoteData) => ({ ...guestQuoteData, [name]: value }));
    };
 
+   const validateFormFields = () =>
+      new Promise<boolean>((resolve) => {
+         const formFields = Object.keys(guestQuoteData);
+         let formFieldsUnFilled = formFields.filter(
+            (field) => guestQuoteData[field as keyof FormState].trim() === ""
+         );
+         if (formFieldsUnFilled.length > 0) {
+            setError((error) => ({
+               ...error,
+               status: true,
+               message: "All fields are required",
+               emailError: "",
+            }));
+            resolve(false);
+            return;
+         } else if (!guestQuoteData?.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            setError((error) => ({
+               ...error,
+               status: true,
+               message: "",
+               emailError: "Enter a valid email address",
+            }));
+            resolve(false);
+            return;
+         } else resolve(true);
+      });
+
    const handleClear = () => {
       setGuestQuoteData({
          firstName: "",
@@ -56,25 +90,38 @@ const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
          phone: "",
          comment: "",
       });
+      setError({
+         status: false,
+         message: "",
+         emailError: "",
+      });
    };
 
    const handleOnSubmit = async () => {
-      setLoading(true);
-      try {
-         await sendContactForm(guestQuoteData);
-         setSubmitted(true);
-         setLoading(false);
-         handleClear && handleClear();
-         notification["success"]({
-            message: "Form submitted successfully 👍🏻",
-         });
-      } catch (error) {
-         if (error) {
-            setLoading(false);
+      const formFieldsValid = await validateFormFields();
+      if (formFieldsValid) {
+         setLoading(true);
+         try {
+            await sendContactForm(guestQuoteData);
             setSubmitted(true);
-            notification["error"]({
-               message: "Failed to submit form 😰",
+            setLoading(false);
+            handleClear && handleClear();
+            notification["success"]({
+               message: "Form submitted successfully 👍🏻",
             });
+         } catch (error) {
+            if (error) {
+               setLoading(false);
+               setSubmitted(false);
+               setError({
+                  status: false,
+                  message: "",
+                  emailError: "",
+               });
+               notification["error"]({
+                  message: "Failed to submit form 😰",
+               });
+            }
          }
       }
    };
@@ -89,14 +136,16 @@ const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
                   error="hello"
                   name="firstName"
                   value={firstName}
-                  onChange={(e) => handleInputChange(e)}
+                  disabled={isSubmitted || loading}
+                  onChange={(e) => !loading && handleInputChange(e)}
                />
                <TextField
                   label="Last Name"
                   type="text"
                   name="lastName"
                   value={lastName}
-                  onChange={(e) => handleInputChange(e)}
+                  disabled={isSubmitted || loading}
+                  onChange={(e) => !loading && handleInputChange(e)}
                />
             </div>
             <div>
@@ -105,14 +154,16 @@ const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
                   type="email"
                   name="email"
                   value={email}
-                  onChange={(e) => handleInputChange(e)}
+                  disabled={isSubmitted || loading}
+                  onChange={(e) => !loading && handleInputChange(e)}
                />
                <TextField
                   label="Phone"
                   type="tel"
                   name="phone"
                   value={phone}
-                  onChange={(e) => handleInputChange(e)}
+                  disabled={isSubmitted || loading}
+                  onChange={(e) => !loading && handleInputChange(e)}
                />
             </div>
             <div>
@@ -123,12 +174,16 @@ const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
                   maxRows={7}
                   name="comment"
                   value={comment}
-                  onChange={(e) => handleInputChange(e)}
+                  disabled={isSubmitted || loading}
+                  onChange={(e) => !loading && handleInputChange(e)}
                />
             </div>
          </div>
-         <button data-submit="false" onClick={handleOnSubmit} disabled={loading}>
-            {isSubmitted ? (
+         {status ? <p className={styles.error}>{message || emailError}</p> : null}
+         <button data-submit={isSubmitted} onClick={handleOnSubmit} disabled={loading || isSubmitted}>
+            {loading ? (
+               <span className={styles.dots_circle_spinner}></span>
+            ) : isSubmitted ? (
                <>
                   <Tick color="var(--primary-white)" />
                   Submitted

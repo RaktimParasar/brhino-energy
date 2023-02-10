@@ -22,7 +22,7 @@ const handler = async (req, res) => {
          };
          try {
             await transporter.sendMail(mailOptions);
-            return res.status(200).json({ success: "hello" });
+            return res.status(200).json({ success: true });
          } catch (err) {
             console.log(err);
             return res.status(400).json({ message: err.message });
