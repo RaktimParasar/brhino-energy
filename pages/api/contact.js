@@ -13,7 +13,9 @@ const handler = async (req, res) => {
       if (!firstName || !lastName || !email || !comment || !phone) {
          return res.status(400).send({ message: "Bad request" });
       } else {
-         const emailHtml = render(<Email />);
+         const emailHtml = render(
+            <Email firstName={firstName} lastName={lastName} email={email} phone={phone} comment={comment} />
+         );
          const mailOptions = {
             from: "raktimparasar96@gmail.com",
             to: email,
@@ -22,7 +24,7 @@ const handler = async (req, res) => {
          };
          try {
             await transporter.sendMail(mailOptions);
-            return res.status(200).json({ success: "hello" });
+            return res.status(200).json({ success: true });
          } catch (err) {
             console.log(err);
             return res.status(400).json({ message: err.message });

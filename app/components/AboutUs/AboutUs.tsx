@@ -13,7 +13,7 @@ interface AboutUsProps {}
 
 const AboutUs: React.FC<AboutUsProps> = () => {
    return (
-      <section className={styles.about_container}>
+      <section className={styles.about_container} id="about">
          <div className={styles.about_info}>
             <h3 className={poppins.className}>About Us</h3>
             <p className={poppins.className}>

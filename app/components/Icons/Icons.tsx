@@ -133,7 +133,7 @@ const Tick: React.FC<IconProps> = ({ color }) => {
          viewBox="0 0 24 24"
          fill={color}
       >
-         <path fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" d="M21 6L9 18 4 13"></path>
+         <path fill="none" stroke={color} strokeMiterlimit="10" strokeWidth="3" d="M21 6L9 18 4 13"></path>
       </svg>
    );
 };
