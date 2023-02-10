@@ -29,7 +29,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
    const mailTo = (email: string) => (window.location.href = `mailto:${email}`);
 
    return (
-      <section className={styles.contact_container}>
+      <section className={styles.contact_container} id="contact">
          <div className={styles.contact_info}>
             <h3 className={poppins.className}>Contact Us</h3>
             <p className={poppins.className}>

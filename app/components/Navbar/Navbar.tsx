@@ -10,13 +10,18 @@ import styles from "./Navbar.module.css";
 interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = ({}) => {
+   const handleMenuScroll = (item: string) => {
+      const goToItem = document.getElementById(item);
+      goToItem?.scrollIntoView({ behavior: "smooth" });
+   };
+
    return (
       <>
          <nav className={styles.navbar}>
             <div className={styles["menu-container"]}>
                <ul>
-                  <li>Services</li>
-                  <li>Projects</li>
+                  <li onClick={() => handleMenuScroll("services")}>Services</li>
+                  <li onClick={() => handleMenuScroll("projects")}>Projects</li>
                   <div className={styles.logo_container}>
                      <Link href="/" passHref style={{ textDecoration: "none" }}>
                         <Image
@@ -28,8 +33,8 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
                         />
                      </Link>
                   </div>
-                  <li>About</li>
-                  <li>Contact</li>
+                  <li onClick={() => handleMenuScroll("about")}>About</li>
+                  <li onClick={() => handleMenuScroll("contact")}>Contact</li>
                </ul>
             </div>
          </nav>

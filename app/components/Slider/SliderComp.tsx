@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Slider from "react-slick";
 
 import { Poppins } from "@next/font/google";

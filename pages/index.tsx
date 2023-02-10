@@ -1,23 +1,23 @@
 import type { NextPage } from "next";
 
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Inter, Poppins } from "@next/font/google";
 
-import { useState, Suspense } from "react";
+import { Suspense } from "react";
 
 import Navbar from "@components/Navbar/Navbar";
-import { CARD_CONTENTS, PROJECTS, CLIENTS, TEAM } from "../app/utils/constants";
-import SliderComp from "@components/Slider/SliderComp";
 import Clients from "@components/Clients/Clients";
+import AboutUs from "@components/AboutUs/AboutUs";
+import SliderComp from "@components/Slider/SliderComp";
+import ContactUs from "@components/ContactUs/ContactUs";
+import QuoteForm from "@components/QuoteForm/QuoteForm";
+import { Facebook, Linkedin, Twitter } from "@components/Icons/Icons";
+import { CARD_CONTENTS, PROJECTS, CLIENTS, TEAM } from "../app/utils/constants";
 
 import styles from "../styles/Home.module.css";
-import AboutUs from "@components/AboutUs/AboutUs";
-import ContactUs from "@components/ContactUs/ContactUs";
-import Link from "next/link";
-import { Facebook, Linkedin, Twitter } from "@components/Icons/Icons";
-import QuoteForm from "@components/QuoteForm/QuoteForm";
 
 const ServicesCard = dynamic(() => import("@components/ServicesCard/ServicesCard"));
 
@@ -77,7 +77,7 @@ const Home: NextPage = () => {
                   <span></span>
                </div>
             </section>
-            <section className={styles.services_container}>
+            <section className={styles.services_container} id="services">
                <div className={styles.services_wrapper}>
                   <h3>Professional Services</h3>
                   <p>
@@ -88,7 +88,7 @@ const Home: NextPage = () => {
                   <div className={styles.services_cards_container}>{renderServicesCards()}</div>
                </div>
             </section>
-            <section className={styles.projects_container}>
+            <section className={styles.projects_container} id="projects">
                <div className={styles.services_wrapper}>
                   <h3>Project Portfolio</h3>
                   <p>

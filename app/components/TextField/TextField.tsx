@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { Poppins } from "@next/font/google";
 
 import styles from "./TextField.module.css";

@@ -10,8 +10,13 @@
   },
   "dependencies": {
     "@next/font": "13.1.1",
+    "@react-email/body": "0.0.1",
     "@react-email/button": "0.0.6",
+    "@react-email/container": "0.0.7",
     "@react-email/html": "0.0.4",
+    "@react-email/img": "0.0.4",
+    "@react-email/preview": "0.0.5",
+    "@react-email/section": "0.0.8",
     "@types/google-map-react": "^2.1.7",
     "@types/node": "18.11.18",
     "@types/nodemailer": "^6.4.7",
