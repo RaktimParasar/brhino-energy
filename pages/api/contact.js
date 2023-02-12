@@ -19,7 +19,7 @@ const handler = async (req, res) => {
          const mailOptions = {
             from: "raktimparasar96@gmail.com",
             to: email,
-            subject: comment,
+            subject: "BRhino Services",
             html: emailHtml,
          };
          try {
