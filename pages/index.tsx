@@ -17,6 +17,8 @@ import QuoteForm from "@components/QuoteForm/QuoteForm";
 import { Facebook, Linkedin, Twitter } from "@components/Icons/Icons";
 import { CARD_CONTENTS, PROJECTS, CLIENTS, TEAM } from "../app/utils/constants";
 
+import { baseURL } from "../app/utils/constants";
+
 import styles from "../styles/Home.module.css";
 
 const ServicesCard = dynamic(() => import("@components/ServicesCard/ServicesCard"));
@@ -56,14 +58,14 @@ const Home: NextPage = () => {
             <section className={styles.background_video_container}>
                <video
                   className={styles.background_video}
-                  src="./images/bg_video.mp4"
+                  src={`${baseURL}/Brhino/bg_video_mEAHCgdKY.webm?ik-sdk-version=javascript-1.4.3&updatedAt=1676295428567`}
                   autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline
                   preload="true"
                />
-               <Navbar />
+               <Navbar poppins={poppins} />
                <div className={styles.header}>
                   <h1>
                      BRHINO <br />

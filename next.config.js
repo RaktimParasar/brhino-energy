@@ -7,6 +7,16 @@ const nextConfig = {
       locales: ["en-US"],
       defaultLocale: "en-US",
    },
+   images: {
+      remotePatterns: [
+         {
+            protocol: "https",
+            hostname: "ik.imagekit.io",
+            port: "",
+            pathname: `/${process.env.NEXT_PUBLIC_IMAGEKIT_KEY}/Brhino/**`,
+         },
+      ],
+   },
    // experimental: { appDir: true },
 };
 
