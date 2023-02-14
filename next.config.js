@@ -13,7 +13,7 @@ const nextConfig = {
             protocol: "https",
             hostname: "ik.imagekit.io",
             port: "",
-            pathname: `/${process.env.NEXT_PUBLIC_IMAGEKIT_KEY}/Brhino/**`,
+            pathname: "/bftee4gsu2d/Brhino/**",
          },
       ],
    },

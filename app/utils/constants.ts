@@ -85,4 +85,4 @@ export const TEAM = [
    },
 ];
 
-export const baseURL = `https://ik.imagekit.io/${process.env.NEXT_PUBLIC_IMAGEKIT_KEY}`;
+export const baseURL = "https://ik.imagekit.io/bftee4gsu2d";
