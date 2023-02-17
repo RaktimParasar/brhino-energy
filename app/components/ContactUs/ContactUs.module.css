@@ -38,7 +38,13 @@
    align-items: center;
 }
 
-.contact_info > p > svg {
+.contact_info > p > span {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.contact_info > p > span > svg {
    width: 20px;
    height: 20px;
    margin-right: 10px;
@@ -102,4 +108,35 @@
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center center;
+}
+
+@media only screen and (max-width: 768px) {
+   .contact_container {
+      display: grid;
+      grid-auto-rows: 300px 200px;
+      height: 100%;
+      gap: 0;
+      justify-content: unset;
+   }
+
+   .contact_info {
+      padding: 1rem;
+   }
+}
+
+@media only screen and (max-width: 520px) {
+   .contact_info h3 {
+      font-size: 1rem;
+      line-height: 20px;
+   }
+
+   .contact_info p {
+      max-width: 100%;
+      margin-top: 10px;
+      font-size: 14px;
+   }
+
+   .copy_icon > svg {
+      margin-left: 20px;
+   }
 }

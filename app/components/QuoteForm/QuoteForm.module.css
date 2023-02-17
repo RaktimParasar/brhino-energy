@@ -190,3 +190,25 @@
          0em -2em 0 -0.125em, 1.41421356em -1.41421356em 0 -0.0625em;
    }
 }
+
+@media only screen and (max-width: 900px) {
+   .form_box,
+   .form_wrapper {
+      width: 100%;
+   }
+}
+
+@media only screen and (max-width: 520px) {
+   .form_box,
+   .form_box > div {
+      gap: 20px;
+   }
+
+   .form_box > div {
+      flex-direction: column;
+   }
+
+   .form_wrapper > button {
+      margin-bottom: 20px;
+   }
+}

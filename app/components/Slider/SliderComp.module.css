@@ -46,3 +46,13 @@
    letter-spacing: 0.5px;
    opacity: 0.7;
 }
+
+@media only screen and (max-width: 520px) {
+   .content_details > h3 {
+      font-size: 1rem;
+   }
+
+   .content_details > p {
+      font-size: 12px;
+   }
+}

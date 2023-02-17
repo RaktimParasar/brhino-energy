@@ -44,3 +44,31 @@
    background-size: cover;
    background-position: center center;
 }
+
+@media only screen and (max-width: 768px) {
+   .about_container {
+      display: grid;
+      grid-auto-rows: 400px 200px;
+      height: 100%;
+      gap: 0;
+      justify-content: unset;
+   }
+
+   .about_info {
+      padding: 1rem;
+   }
+}
+
+@media only screen and (max-width: 520px) {
+   .about_info h3 {
+      font-size: 1rem;
+      line-height: 20px;
+   }
+
+   .about_info p {
+      max-width: 100%;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 18px;
+   }
+}

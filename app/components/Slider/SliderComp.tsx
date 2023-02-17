@@ -6,6 +6,8 @@ import Slider from "react-slick";
 
 import { Poppins } from "@next/font/google";
 
+import useWindowSize from "@hooks/useWindowSize";
+
 import styles from "./SliderComp.module.css";
 
 const poppins = Poppins({
@@ -18,6 +20,7 @@ interface SliderProps {
 }
 
 const SliderComp: React.FC<SliderProps> = ({ content }) => {
+   const size = useWindowSize();
    const sliderRef = useRef<any>();
 
    const settings = {
@@ -37,7 +40,12 @@ const SliderComp: React.FC<SliderProps> = ({ content }) => {
    const renderItems = (): JSX.Element[] =>
       content.map((item: any, index: number) => (
          <div key={`${index}-${item.imageSrc}`} className={styles.content_wrapper}>
-            <Image src={item.imageSrc} alt={item.title} width={350} height={350} />
+            <Image
+               src={item.imageSrc}
+               alt={item.title}
+               width={size && size <= 520 ? 200 : 350}
+               height={size && size <= 520 ? 200 : 350}
+            />
             <div className={styles.content_details}>
                <h3 className={poppins.className}>{item.title}</h3>
                <p className={poppins.className}> {item.description}</p>
