@@ -178,3 +178,19 @@ input:-webkit-autofill:active {
    height: 25px;
    font-size: 8px;
 }
+
+.ant-modal .ant-modal-content,
+.ant-modal .ant-modal-header {
+   background-color: hsl(0, 0%, 0%) !important;
+   color: var(--primary-white) !important;
+}
+
+.ant-modal .ant-modal-title,
+.ant-modal .ant-modal-close {
+   color: var(--primary-white) !important;
+}
+
+.ant-modal .ant-modal-close:focus-visible {
+   outline: 0 !important;
+   outline-offset: 0 !important;
+}

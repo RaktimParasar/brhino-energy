@@ -4,6 +4,10 @@ import { NextFont } from "@next/font/dist/types";
 import Image from "next/image";
 import Link from "next/link";
 
+import { useState } from "react";
+import { Modal } from "antd";
+
+import { Menu } from "@components/Icons/Icons";
 import { baseURL } from "../../utils/constants";
 
 import styles from "./Navbar.module.css";
@@ -13,7 +17,23 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ poppins }) => {
+   const [open, setOpen] = useState(false);
+
+   const showMenu = () => {
+      setOpen(true);
+   };
+
+   const onClose = () => {
+      setOpen((open) => !open);
+   };
+
    const handleMenuScroll = (item: string) => {
+      const goToItem = document.getElementById(item);
+      goToItem?.scrollIntoView({ behavior: "smooth" });
+   };
+
+   const handleMenuScrollMobile = (item: string) => {
+      onClose && onClose();
       const goToItem = document.getElementById(item);
       goToItem?.scrollIntoView({ behavior: "smooth" });
    };
@@ -39,8 +59,29 @@ const Navbar: React.FC<NavbarProps> = ({ poppins }) => {
                   <li onClick={() => handleMenuScroll("about")}>About</li>
                   <li onClick={() => handleMenuScroll("contact")}>Contact</li>
                </ul>
+               <button className={styles.menu_btn} onClick={showMenu}>
+                  <Menu color={"var(--secondary-indigo)"} />
+               </button>
             </div>
          </nav>
+         <Modal
+            title="Menu"
+            centered
+            open={open}
+            footer={null}
+            onCancel={() => onClose()}
+            bodyStyle={{ height: "250px" }}
+            width={300}
+         >
+            <div className={styles.mobile_menu}>
+               <ul className={poppins.className}>
+                  <li onClick={() => handleMenuScrollMobile("services")}>Services</li>
+                  <li onClick={() => handleMenuScrollMobile("projects")}>Projects</li>
+                  <li onClick={() => handleMenuScrollMobile("about")}>About</li>
+                  <li onClick={() => handleMenuScrollMobile("contact")}>Contact</li>
+               </ul>
+            </div>
+         </Modal>
       </>
    );
 };

@@ -34,3 +34,37 @@
    line-height: 22px;
    max-width: 300px;
 }
+
+@media only screen and (max-width: 900px) {
+   .clients_grid {
+      flex-direction: column;
+      padding: 70px 0;
+      width: 100%;
+      gap: 50px;
+   }
+
+   .clients_card {
+      min-width: 300px;
+      width: 500px;
+      height: 150px;
+      flex-direction: row;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+      border-radius: 8px;
+      justify-content: space-between;
+      padding: 0 1rem;
+      text-align: left;
+   }
+}
+
+@media only screen and (max-width: 520px) {
+   .clients_card {
+      width: 100%;
+   }
+
+   .clients_grid h3 {
+      max-width: 100%;
+      margin-left: 20px;
+      font-size: 14px;
+      line-height: 16px;
+   }
+}
