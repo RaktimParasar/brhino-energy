@@ -59,12 +59,12 @@ const Home: NextPage = () => {
                <video
                   className={styles.background_video}
                   src={`${baseURL}/Brhino/bg_video_mEAHCgdKY.webm?ik-sdk-version=javascript-1.4.3&updatedAt=1676295428567`}
-                  autoPlay={true}
-                  loop={true}
-                  muted={true}
+                  autoPlay
+                  loop
+                  muted
                   playsInline
-                  preload="true"
-                  controls
+                  preload="auto"
+                  data-autoplay
                />
                <Navbar poppins={poppins} />
                <div className={styles.header}>
