@@ -64,6 +64,7 @@ const Home: NextPage = () => {
                   muted={true}
                   playsInline
                   preload="true"
+                  controls
                />
                <Navbar poppins={poppins} />
                <div className={styles.header}>
