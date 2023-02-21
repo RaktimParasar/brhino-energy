@@ -61,14 +61,12 @@ const Home: NextPage = () => {
             <section className={styles.background_video_container}>
                <video
                   className={styles.background_video}
-                  src="/images/test.mp4"
+                  src={`${baseURL}/Brhino/brhino-bg_7NyDt0JG7.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1676959453506`}
                   autoPlay
                   loop
                   muted
                   playsInline
                   preload="auto"
-                  data-autoplay
-                  poster="/images/poster.png"
                />
                <Navbar poppins={poppins} />
                <div className={styles.header}>

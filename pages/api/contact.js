@@ -18,7 +18,7 @@ const handler = async (req, res) => {
          );
          const mailOptions = {
             from: "raktimparasar96@gmail.com",
-            to: email,
+            to: "brhinoenergy@yahoo.com",
             subject: "BRhino Services",
             html: emailHtml,
          };
