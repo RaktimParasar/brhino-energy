@@ -6,3 +6,4 @@
 -  [x] Import image from imagekit
 -  [ ] Change nodemailer email
 -  [ ] Add content
+-  [ ] Google Search console
