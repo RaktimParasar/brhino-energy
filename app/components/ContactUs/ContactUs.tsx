@@ -63,7 +63,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                <span>
                   <Phone color={"var(--primary-white)"} />
                </span>
-               +91-8638621558
+               +91-9429103268
             </p>
             <button className={poppins.className} onClick={() => mailTo("brhinoenergy@yahoo.com")}>
                <Email color={"var(--primary-white)"} /> Send Email

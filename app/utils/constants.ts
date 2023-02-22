@@ -66,7 +66,7 @@ export const TEAM = [
       imageSrc: "/images/team-1.jpg",
    },
    {
-      name: "Ajay Kr. Karki Chetry",
+      name: "Jimmy Mathew",
       designation: "Operational Manager",
       imageSrc: "/images/team-2.jpg",
    },
