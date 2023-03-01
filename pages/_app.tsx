@@ -12,6 +12,13 @@ export default function App({ Component, pageProps }: AppProps) {
    return (
       <>
          <Head>
+            <title>Brhino Energy Services</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
             {/* <!-- Primary Meta Tags --> */}
             <meta name="title" content="Brhino Energy Services" />
             <meta
@@ -20,12 +27,12 @@ export default function App({ Component, pageProps }: AppProps) {
             />
             <meta name="robots" content="index, follow" />
             <meta name="theme-color" content="#000000" />
-            <link rel="canonical" href="https://brhinoenergy.com" />
+            <link rel="canonical" href="https://brhinoenergy.com/" />
             <link rel="sitemap" type="application/xml" href="https://brhinoenergy.com/sitemap.xml" />
 
             {/* <!-- Open Graph / Facebook --> */}
             <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://brhinoenergy.com" />
+            <meta property="og:url" content="https://brhinoenergy.com/" />
             <meta property="og:title" content="Brhino Energy Services" />
             <meta
                property="og:description"
@@ -38,7 +45,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
             {/* <!-- Twitter --> */}
             <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content="https://brhinoenergy.com" />
+            <meta property="twitter:url" content="https://brhinoenergy.com/" />
             <meta property="twitter:title" content="Brhino Energy Services" />
             <meta
                property="twitter:description"
