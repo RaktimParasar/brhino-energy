@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <meta name="title" content="Brhino Energy Services" />
             <meta
                name="description"
-               content="Looking for a professional to help you with your project? Look no further! Our website offers a wide range of professional services, including Coil Tubing, Rig Maintenance, and Manpower Services. We take pride in offering top-notch work at fair and competitive prices. With our extensive experience and expertise, we ensure that every detail of your project is discussed before beginning to give you an accurate quote. Contact us today for a free estimate, and to learn more about how we can help you with your next project."
+               content="Looking for a professional to help you with your project? Look no further! Our company offers a wide range of professional services, including Coil Tubing, Rig Maintenance, and Manpower Services. We take pride in offering top-notch work at fair and competitive prices. With our extensive experience and expertise, we ensure that every detail of your project is discussed before beginning to give you an accurate quote. Contact us today for a free estimate, and to learn more about how we can help you with your next project."
             />
             <meta name="robots" content="index, follow" />
             <meta name="theme-color" content="#000000" />
@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <meta property="og:title" content="Brhino Energy Services" />
             <meta
                property="og:description"
-               content="Looking for a professional to help you with your project? Look no further! Our website offers a wide range of professional services, including Coil Tubing, Rig Maintenance, and Manpower Services. We take pride in offering top-notch work at fair and competitive prices. With our extensive experience and expertise, we ensure that every detail of your project is discussed before beginning to give you an accurate quote. Contact us today for a free estimate, and to learn more about how we can help you with your next project."
+               content="Looking for a professional to help you with your project? Look no further! Our company offers a wide range of professional services, including Coil Tubing, Rig Maintenance, and Manpower Services. We take pride in offering top-notch work at fair and competitive prices. With our extensive experience and expertise, we ensure that every detail of your project is discussed before beginning to give you an accurate quote. Contact us today for a free estimate, and to learn more about how we can help you with your next project."
             />
             <meta
                property="og:image"
@@ -50,7 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <meta property="twitter:title" content="Brhino Energy Services" />
             <meta
                property="twitter:description"
-               content="Looking for a professional to help you with your project? Look no further! Our website offers a wide range of professional services, including Coil Tubing, Rig Maintenance, and Manpower Services. We take pride in offering top-notch work at fair and competitive prices. With our extensive experience and expertise, we ensure that every detail of your project is discussed before beginning to give you an accurate quote. Contact us today for a free estimate, and to learn more about how we can help you with your next project."
+               content="Looking for a professional to help you with your project? Look no further! Our company offers a wide range of professional services, including Coil Tubing, Rig Maintenance, and Manpower Services. We take pride in offering top-notch work at fair and competitive prices. With our extensive experience and expertise, we ensure that every detail of your project is discussed before beginning to give you an accurate quote. Contact us today for a free estimate, and to learn more about how we can help you with your next project."
             />
             <meta
                property="twitter:image"
