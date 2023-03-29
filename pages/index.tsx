@@ -8,7 +8,7 @@ import { Inter, Poppins } from "@next/font/google";
 import { Suspense } from "react";
 
 import Navbar from "@components/Navbar/Navbar";
-import { Facebook, Linkedin, Twitter } from "@components/Icons/Icons";
+import { Linkedin } from "@components/Icons/Icons";
 import { CARD_CONTENTS, PROJECTS, CLIENTS, TEAM } from "../app/utils/constants";
 
 import { baseURL } from "../app/utils/constants";
@@ -155,13 +155,11 @@ const Home: NextPage = () => {
             </section>
             <footer className={styles.footer_container}>
                <div className={styles.socials}>
-                  <Link href="javascript:void(0)">
-                     <Facebook color={"var(--primary-white)"} />
-                  </Link>
-                  <Link href="javascript:void(0)">
-                     <Twitter color={"var(--primary-white)"} />
-                  </Link>
-                  <Link href="javascript:void(0)">
+                  <Link
+                     href="https://www.linkedin.com/company/brhino-energy-services/"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                  >
                      <Linkedin color={"var(--primary-white)"} />
                   </Link>
                </div>
