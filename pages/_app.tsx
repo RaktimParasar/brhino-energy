@@ -30,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <meta name="theme-color" content="#000000" />
             <link rel="canonical" href="https://brhinoenergy.com/" />
             <link rel="sitemap" type="application/xml" href="https://brhinoenergy.com/sitemap.xml" />
+            <meta name="google-site-verification" content="oRYxBe3LWZU03MEE4EeGMHSSZUekNWS9kRp3-zjmUWg" />
 
             {/* <!-- Open Graph / Facebook --> */}
             <meta property="og:type" content="website" />
