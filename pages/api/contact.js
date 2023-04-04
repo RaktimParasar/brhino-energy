@@ -17,9 +17,9 @@ const handler = async (req, res) => {
             <Email firstName={firstName} lastName={lastName} email={email} phone={phone} comment={comment} />
          );
          const mailOptions = {
-            from: "raktimparasar96@gmail.com",
+            from: "info@brhinoenergy.com",
             to: "brhinoenergy@yahoo.com",
-            subject: "BRhino Services",
+            subject: "BRhino Energy",
             html: emailHtml,
          };
          try {
