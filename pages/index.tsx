@@ -14,6 +14,7 @@ import { CARD_CONTENTS, PROJECTS, CLIENTS, TEAM } from "../app/utils/constants";
 import { baseURL } from "../app/utils/constants";
 
 import styles from "../styles/Home.module.css";
+import UploadCV from "@components/UploadCV/UploadCV";
 
 const ServicesCard = dynamic(() => import("@components/ServicesCard/ServicesCard"), { ssr: false });
 const Clients = dynamic(() => import("@components/Clients/Clients"), { ssr: false });
@@ -151,6 +152,18 @@ const Home: NextPage = () => {
                      satisfaction.
                   </p>
                   <QuoteForm />
+               </div>
+            </section>
+            <section className={styles.careers_container}>
+               <div className={styles.services_wrapper}>
+                  <h3>Brhino Careers</h3>
+                  <p>
+                     The careers section provides a platform for you to upload your CV to our database,
+                     increasing your visibility to potential employers for future job opportunities. Take
+                     advantage of this opportunity to showcase your skills and experience to potential
+                     employers and take the first step towards advancing your career.
+                  </p>
+                  <UploadCV />
                </div>
             </section>
             <footer className={styles.footer_container}>
