@@ -12,4 +12,6 @@ export const transporter = nodemailer.createTransport({
       user: adminEmail,
       pass: key,
    },
+   debug: true,
+   logger: true,
 });

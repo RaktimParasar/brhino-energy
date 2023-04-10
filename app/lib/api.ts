@@ -1,5 +1,4 @@
 import axios from "axios";
-import type { UploadFile } from "antd/lib/upload/interface";
 
 type Data = {
    firstName: string;
@@ -18,11 +17,12 @@ export const sendContactForm = async (data: Data) => {
    }
 };
 
-export const sendResumeToEmail = async (file: UploadFile[]) => {
+export const sendResumeToEmail = async (fileBuffer: any) => {
    try {
-      const response = await axios.post("/api/upload", file);
+      const response = await axios.post("/api/upload", { buffer: fileBuffer });
       return response.data;
    } catch (error) {
+      console.log(error);
       throw new Error("Failed to upload resume");
    }
 };

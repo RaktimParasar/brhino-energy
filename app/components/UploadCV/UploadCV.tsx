@@ -3,8 +3,10 @@ import type { UploadFile, UploadChangeParam } from "antd/lib/upload/interface";
 import { Poppins } from "@next/font/google";
 
 import { useState } from "react";
-import { CloudUploadOutlined, EyeOutlined } from "@ant-design/icons";
 import { message, Upload } from "antd";
+import { CloudUploadOutlined, EyeOutlined } from "@ant-design/icons";
+
+import { sendResumeToEmail } from "../../lib/api";
 
 import styles from "./UploadCV.module.css";
 
@@ -33,27 +35,47 @@ const UploadCV: React.FC = (): JSX.Element => {
    const onFileRemove = (file: UploadFile<any>) => {};
 
    const handlePreview = () => {
-      if (fileList?.length > 0) {
-         const file = fileList?.[0]?.originFileObj;
-         const fileUrl = URL.createObjectURL(file as any);
-         const pdfWindow = window.open();
+      const file = fileList?.[0]?.originFileObj;
+      if (file) {
+         const fileUrl = URL.createObjectURL(file);
+         const pdfWindow = window.open(fileUrl, "_blank");
          if (pdfWindow) {
-            pdfWindow.location.href = fileUrl;
+            pdfWindow.focus();
+         } else {
+            message.error("Failed to open PDF preview");
          }
-         return;
       } else {
          message.info("Please add your resume to preview");
       }
    };
 
+   const readFileAsBuffer = (file: any): Promise<Buffer> => {
+      return new Promise((resolve, reject) => {
+         const reader = new FileReader();
+
+         reader.onload = () => {
+            const buffer = Buffer.from(reader.result as ArrayBuffer);
+            resolve(buffer);
+         };
+
+         reader.onerror = () => {
+            reject(new Error("Failed to read file"));
+         };
+
+         reader.readAsArrayBuffer(file.originFileObj as any);
+      });
+   };
+
    const handleSendResume = async () => {
-      if (fileList?.length <= 0) {
+      const [file] = fileList || [];
+      if (!file) {
          message.error("Please add your resume to upload");
          return;
       }
       setLoading(true);
       try {
-         //  await sendResumeToEmail(fileList);
+         const fileBuffer = await readFileAsBuffer(file);
+         await sendResumeToEmail(fileBuffer);
          setSubmitted(true);
          setLoading(false);
          message.success("Resume uploaded successfully 👍🏻");
@@ -61,6 +83,7 @@ const UploadCV: React.FC = (): JSX.Element => {
          if (error) {
             setLoading(false);
             setSubmitted(false);
+            console.log("error", error);
             message.error("Something went wrong please try again later");
          }
       }
