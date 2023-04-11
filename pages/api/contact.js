@@ -7,6 +7,9 @@ import Email from "@components/Email/Email";
 
 // @dev react-email logic using nodemailer
 
+const infoEmail = process.env.NEXT_PUBLIC_NODEMAILER_INFO_EMAIL;
+const adminEmail = process.env.NEXT_PUBLIC_NODEMAILER_ADMIN_EMAIL;
+
 const handler = async (req, res) => {
    if (req.method === "POST") {
       const { firstName, lastName, email, phone, comment } = req.body;
@@ -17,8 +20,8 @@ const handler = async (req, res) => {
             <Email firstName={firstName} lastName={lastName} email={email} phone={phone} comment={comment} />
          );
          const mailOptions = {
-            from: "info@brhinoenergy.com",
-            to: "brhinoenergy@yahoo.com",
+            from: adminEmail,
+            to: infoEmail,
             subject: "BRhino Energy",
             html: emailHtml,
          };

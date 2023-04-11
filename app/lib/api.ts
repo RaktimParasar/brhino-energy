@@ -16,3 +16,16 @@ export const sendContactForm = async (data: Data) => {
       throw new Error("Failed to send message");
    }
 };
+
+export const sendResumeToEmail = async (fileBuffer: any, name: string, type: string) => {
+   try {
+      const response = await axios.post("/api/upload", {
+         buffer: fileBuffer,
+         fileName: name,
+         fileType: type,
+      });
+      return response.data;
+   } catch (error) {
+      throw new Error("Failed to upload resume");
+   }
+};
