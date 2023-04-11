@@ -5,7 +5,7 @@
    height: 100%;
    align-items: center;
    place-content: center;
-   margin: 40px 0;
+   margin-top: 40px;
 }
 
 .add_icon {
@@ -21,13 +21,13 @@
 }
 
 .upload_actions {
+   margin-top: 40px;
    display: flex;
    justify-content: space-between;
    gap: 20px;
 }
 
 .upload_actions > button {
-   margin-top: 40px;
    outline: none;
    cursor: pointer;
    display: flex;
@@ -62,4 +62,16 @@
 
 .upload_actions > button:active {
    transform: scale(0.9);
+}
+
+.upload_actions > button[data-submit="true"] {
+   background-color: #16a34a;
+   color: var(--primary-white);
+   pointer-events: none;
+}
+
+@media only screen and (max-width: 350px) {
+   .upload_actions {
+      flex-direction: column;
+   }
 }

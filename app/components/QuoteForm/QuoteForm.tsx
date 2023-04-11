@@ -7,7 +7,6 @@ import TextField from "@components/TextField/TextField";
 
 import styles from "./QuoteForm.module.css";
 import { sendContactForm } from "../../lib/api";
-// import axios from "axios";
 
 interface QuoteFormProps {}
 
@@ -39,12 +38,6 @@ const QuoteForm: React.FC<QuoteFormProps> = (): JSX.Element => {
 
    const { email, phone, firstName, lastName, comment } = guestQuoteData;
    const { status, message, emailError } = error;
-
-   // const getLocation = async () => {
-   //    const geoInfo = await axios.get("http://ip-api.com/json");
-   //    console.log(geoInfo);
-   // };
-   // getLocation();
 
    const handleInputChange = (
       e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>

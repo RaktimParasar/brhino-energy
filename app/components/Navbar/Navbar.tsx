@@ -58,6 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ poppins }) => {
                   <li onClick={() => handleMenuScroll("projects")}>Projects</li>
                   <li onClick={() => handleMenuScroll("about")}>About</li>
                   <li onClick={() => handleMenuScroll("contact")}>Contact</li>
+                  <li onClick={() => handleMenuScroll("careers")}>Careers</li>
                </ul>
                <button className={styles.menu_btn} onClick={showMenu}>
                   <Menu color={"var(--secondary-indigo)"} />
@@ -70,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ poppins }) => {
             open={open}
             footer={null}
             onCancel={() => onClose()}
-            bodyStyle={{ height: "250px" }}
+            bodyStyle={{ height: "300px" }}
             width={300}
          >
             <div className={styles.mobile_menu}>
@@ -79,6 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ poppins }) => {
                   <li onClick={() => handleMenuScrollMobile("projects")}>Projects</li>
                   <li onClick={() => handleMenuScrollMobile("about")}>About</li>
                   <li onClick={() => handleMenuScrollMobile("contact")}>Contact</li>
+                  <li onClick={() => handleMenuScrollMobile("careers")}>Careers</li>
                </ul>
             </div>
          </Modal>

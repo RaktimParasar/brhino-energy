@@ -14,14 +14,14 @@ import { CARD_CONTENTS, PROJECTS, CLIENTS, TEAM } from "../app/utils/constants";
 import { baseURL } from "../app/utils/constants";
 
 import styles from "../styles/Home.module.css";
-import UploadCV from "@components/UploadCV/UploadCV";
 
-const ServicesCard = dynamic(() => import("@components/ServicesCard/ServicesCard"), { ssr: false });
-const Clients = dynamic(() => import("@components/Clients/Clients"), { ssr: false });
-const AboutUs = dynamic(() => import("@components/AboutUs/AboutUs"), { ssr: false });
-const SliderComp = dynamic(() => import("@components/Slider/SliderComp"), { ssr: false });
-const ContactUs = dynamic(() => import("@components/ContactUs/ContactUs"), { ssr: false });
-const QuoteForm = dynamic(() => import("@components/QuoteForm/QuoteForm"), { ssr: false });
+const ServicesCard = dynamic(() => import("@components/ServicesCard/ServicesCard"), { ssr: true });
+const Clients = dynamic(() => import("@components/Clients/Clients"), { ssr: true });
+const AboutUs = dynamic(() => import("@components/AboutUs/AboutUs"), { ssr: true });
+const SliderComp = dynamic(() => import("@components/Slider/SliderComp"), { ssr: true });
+const ContactUs = dynamic(() => import("@components/ContactUs/ContactUs"), { ssr: true });
+const QuoteForm = dynamic(() => import("@components/QuoteForm/QuoteForm"), { ssr: true });
+const UploadCV = dynamic(() => import("@components/UploadCV/UploadCV"), { ssr: true });
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -154,7 +154,7 @@ const Home: NextPage = () => {
                   <QuoteForm />
                </div>
             </section>
-            <section className={styles.careers_container}>
+            <section className={styles.careers_container} id="careers">
                <div className={styles.services_wrapper}>
                   <h3>Brhino Careers</h3>
                   <p>

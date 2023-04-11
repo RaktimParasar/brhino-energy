@@ -7,8 +7,10 @@ import { message, Upload } from "antd";
 import { CloudUploadOutlined, EyeOutlined } from "@ant-design/icons";
 
 import { sendResumeToEmail } from "../../lib/api";
+import { Tick } from "@components/Icons/Icons";
 
 import styles from "./UploadCV.module.css";
+import loadingStyles from "../QuoteForm/QuoteForm.module.css";
 
 const poppins = Poppins({
    subsets: ["latin"],
@@ -24,15 +26,13 @@ const UploadCV: React.FC = (): JSX.Element => {
       if (
          data?.file?.type?.includes("pdf" || "msword") &&
          data?.file?.size &&
-         data?.file.size / 1024 / 1024 > 1
+         data?.file.size / 1024 / 1024 > 2
       ) {
-         message.error("Maximum document upload size limit is 1 MB");
+         message.error("Maximum document upload size limit is 2 MB");
          return;
       }
       setFileList(data?.fileList);
    };
-
-   const onFileRemove = (file: UploadFile<any>) => {};
 
    const handlePreview = () => {
       const file = fileList?.[0]?.originFileObj;
@@ -69,13 +69,14 @@ const UploadCV: React.FC = (): JSX.Element => {
    const handleSendResume = async () => {
       const [file] = fileList || [];
       if (!file) {
-         message.error("Please add your resume to upload");
+         message.info("Please add your resume to upload");
          return;
       }
       setLoading(true);
       try {
+         const { name, type } = file?.originFileObj as Blob;
          const fileBuffer = await readFileAsBuffer(file);
-         await sendResumeToEmail(fileBuffer);
+         await sendResumeToEmail(fileBuffer, name, type);
          setSubmitted(true);
          setLoading(false);
          message.success("Resume uploaded successfully 👍🏻");
@@ -97,7 +98,6 @@ const UploadCV: React.FC = (): JSX.Element => {
             listType="picture"
             fileList={fileList}
             onChange={onFileUpload}
-            onRemove={onFileRemove}
             supportServerRender
             maxCount={1}
             disabled={submitted || loading}
@@ -108,11 +108,31 @@ const UploadCV: React.FC = (): JSX.Element => {
             </p>
          </Upload>
          <div className={styles.upload_actions}>
-            <button className={poppins.className} onClick={handlePreview} disabled={submitted || loading}>
-               Preview <EyeOutlined style={{ fontSize: 16 }} />
-            </button>
-            <button className={poppins.className} onClick={handleSendResume} disabled={submitted || loading}>
-               Upload <CloudUploadOutlined style={{ fontSize: 16 }} />
+            {!submitted && !loading && (
+               <button className={poppins.className} onClick={handlePreview} disabled={submitted || loading}>
+                  Preview <EyeOutlined style={{ fontSize: 16 }} />
+               </button>
+            )}
+            <button
+               className={poppins.className}
+               data-submit={submitted}
+               onClick={handleSendResume}
+               disabled={submitted || loading}
+            >
+               {loading ? (
+                  <>
+                     Uploading <span className={loadingStyles.dots_circle_spinner}></span>
+                  </>
+               ) : submitted ? (
+                  <>
+                     <Tick color="var(--primary-white)" />
+                     Uploaded
+                  </>
+               ) : (
+                  <>
+                     Upload <CloudUploadOutlined style={{ fontSize: 16 }} />
+                  </>
+               )}
             </button>
          </div>
       </div>
@@ -120,8 +140,3 @@ const UploadCV: React.FC = (): JSX.Element => {
 };
 
 export default UploadCV;
-
-/**
- * todo
- * write button disable logic when file is not uploaded
- */
