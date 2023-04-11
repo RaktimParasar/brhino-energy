@@ -101,6 +101,9 @@ const UploadCV: React.FC = (): JSX.Element => {
             supportServerRender
             maxCount={1}
             disabled={submitted || loading}
+            beforeUpload={() => {
+               return false;
+            }}
          >
             <span className={`${poppins.className} ${styles.add_icon}`}>+</span>
             <p className={`${poppins.className} ${styles.add_description}`}>
