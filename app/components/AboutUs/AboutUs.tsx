@@ -17,14 +17,22 @@ const AboutUs: React.FC<AboutUsProps> = () => {
          <div className={styles.about_info}>
             <h3 className={poppins.className}>About Us</h3>
             <p className={poppins.className}>
-               I’m a leading Drilling Contractor in the San Francisco area. I provide my clients with a
-               comprehensive approach to contracting and specialize in a wide range of services. Ever since
-               starting out as a professional Drilling Contractor in 2000, I’ve prioritized serving my
-               clients’ needs and satisfaction above everything else.
-               <br /> <br />
-               From dealing with mundane bureaucratic tasks to coordinating various contracting initiatives, I
-               take care of all the small details so you don’t have to. Get in touch to bring your vision to
-               life today!
+               We are a leading provider of pan-India manpower services in the oil and gas industry. With a
+               vast network of skilled professionals, we provide end-to-end recruitment solutions for our
+               clients&apos; workforce needs, ensuring timely and cost-effective staffing solutions.
+               <br />
+               <br />
+               Our expertise also extends to the operation and management of workover and drilling rigs,
+               equipment rental, well stimulation services, and technical consultancy for the oil industry. We
+               have a team of experienced professionals who leverage their industry knowledge and expertise to
+               provide customized solutions that meet our clients&apos; specific requirements.
+               <br />
+               <br />
+               At our core, we prioritize safety, quality, and timely delivery of our services. We take a
+               client-centric approach, understanding their unique challenges and providing them with tailored
+               solutions that drive value and maximize their return on investment. With a focus on excellence
+               and continuous improvement, we strive to exceed our clients&apos; expectations and maintain our
+               position as a leading service provider in the oil and gas industry.
             </p>
          </div>
          <div className={styles.about_image}></div>

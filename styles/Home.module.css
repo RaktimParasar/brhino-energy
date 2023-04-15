@@ -126,27 +126,6 @@
    gap: 50px;
 }
 
-.projects_container {
-   width: 100%;
-   padding: 3rem 2rem;
-   color: var(--primary-white);
-   background: linear-gradient(-45deg, #ee7752, var(--secondary-indigo), #23a6d5, #23d5ab);
-   background-size: 400% 400%;
-   animation: gradient 10s ease infinite;
-}
-
-@keyframes gradient {
-   0% {
-      background-position: 0% 50%;
-   }
-   50% {
-      background-position: 100% 50%;
-   }
-   100% {
-      background-position: 0% 50%;
-   }
-}
-
 .clients_container {
    width: 100%;
    padding: 3rem 2rem;
@@ -300,7 +279,6 @@
    }
 
    .services_container,
-   .projects_container,
    .clients_container,
    .form_container,
    .careers_container {

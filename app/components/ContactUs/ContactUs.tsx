@@ -38,7 +38,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                <span>
                   <Address color={"var(--primary-white)"} />
                </span>{" "}
-               55, Highway Mall, Chandkheda, Ahmedabad, Gujarat-382424
+               48, Highway Mall, Chandkheda, Ahmedabad, Gujarat-382424
             </p>
             <p className={poppins.className}>
                <span>
@@ -55,6 +55,22 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                      className={styles.copy_icon}
                      onClick={() => copyToClipboard("brhinoenergy@yahoo.com")}
                   >
+                     <Copy color={"var(--primary-white)"} />
+                  </span>
+               </Tooltip>
+            </p>
+            <p className={poppins.className}>
+               <span>
+                  <Email color={"var(--primary-white)"} />
+               </span>
+               info@brhinoenergy.com{" "}
+               <Tooltip
+                  title={copied ? "Email copied 👍🏻" : "Copy to clipboard"}
+                  color={copied ? "#16A34A" : "var(--secondary-indigo)"}
+                  placement={size && size <= 520 ? "top" : "rightTop"}
+                  overlayInnerStyle={{ color: "var(--primary-white)", fontFamily: "inherit" }}
+               >
+                  <span className={styles.copy_icon} onClick={() => copyToClipboard("info@brhinoenergy.com")}>
                      <Copy color={"var(--primary-white)"} />
                   </span>
                </Tooltip>

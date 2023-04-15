@@ -21,27 +21,6 @@ export const CARD_CONTENTS = [
    },
 ];
 
-export const PROJECTS = [
-   {
-      imageSrc: `${baseURL}/Brhino/tr:f-auto/project-image_L5GV-JORm.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1676203188165`,
-      title: "O&M of Workover Rigs",
-      description:
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-   },
-   {
-      imageSrc: `${baseURL}/Brhino/tr:f-auto/project-image_L5GV-JORm.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1676203188165`,
-      title: "Project 2",
-      description:
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-   },
-   {
-      imageSrc: `${baseURL}/Brhino/tr:f-auto/project-image_L5GV-JORm.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1676203188165`,
-      title: "Project 3",
-      description:
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-   },
-];
-
 export const CLIENTS = [
    {
       title: "ONGC",
@@ -54,39 +33,33 @@ export const CLIENTS = [
    },
 
    {
-      title: "WESTERN OILFIELD PVT LTD",
+      title: "WESTERN OILFIELD PVT. LTD.",
       logo: `${baseURL}/Brhino/tr:f-auto/manpower_ovhro4pTY.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1676203187254`,
    },
    {
       title: "SOUTH ASIA CONSULTANCY",
       logo: `${baseURL}/Brhino/tr:f-auto/south_asia_consultancy_Fy-JC45Q_b.png?updatedAt=1680098183194`,
    },
+   {
+      title: "BSCC Infrastructure PVT. LTD.",
+      logo: `${baseURL}/Brhino/tr:f-auto/bscc-logo_D1qIznjJG.png?updatedAt=1681290247411`,
+   },
 ];
 
 export const TEAM = [
    {
       name: "Bhaskar Jyoti Bora",
-      designation: "CEO, Opeartions",
-      imageSrc: "/images/team-1.jpg",
+      designation: "Founder & CEO",
+      imageSrc: `${baseURL}/Brhino/tr:f-auto/Bhaskar_7R15cNyk7.jpeg?updatedAt=1681289370931`,
    },
    {
-      name: "Jimmy Mathew",
-      designation: "Operational Manager",
-      imageSrc: "/images/team-2.jpg",
+      name: "Biswajit Borah",
+      designation: "Operation Manager",
+      imageSrc: `${baseURL}/Brhino/tr:f-auto/place-holder-avatar_nO8LCxboE.jpg?updatedAt=1681298610074`,
    },
    {
-      name: "Sarah Johnson",
-      designation: "Chief Operating Officer",
-      imageSrc: "/images/team-3.jpg",
-   },
-   {
-      name: "Matthew Brown",
-      designation: "Senior Product Manager",
-      imageSrc: "/images/team-4.jpg",
-   },
-   {
-      name: "Jason Davis",
-      designation: "Director of Marketing",
-      imageSrc: "/images/team-5.jpg",
+      name: "Munim Shah Alam",
+      designation: "Project Manager",
+      imageSrc: `${baseURL}/Brhino/tr:f-auto/Munim_XudaKgGId.jpg?updatedAt=1681289946740`,
    },
 ];

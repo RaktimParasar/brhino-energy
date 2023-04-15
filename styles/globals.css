@@ -158,27 +158,6 @@ input:-webkit-autofill:active {
    -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* react-slick slider styles */
-
-.slick-dots .slick-active > div {
-   background-color: var(--primary-white);
-}
-
-.slider-tabs .slick-slide {
-   padding-bottom: 50px;
-}
-
-.slick-dots > ul {
-   transform: translateY(9rem);
-}
-
-.slick-dots > ul li button:before {
-   color: var(--primary-white) !important;
-   width: 25px;
-   height: 25px;
-   font-size: 8px;
-}
-
 .ant-modal .ant-modal-content,
 .ant-modal .ant-modal-header {
    background-color: hsl(0, 0%, 0%) !important;
