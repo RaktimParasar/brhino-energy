@@ -1,24 +1,38 @@
-.about_container {
+.projects_container {
    width: 100%;
    height: 600px;
    display: flex;
    align-items: center;
    justify-content: space-between;
    gap: 10px;
-   background-color: hsl(0, 0%, 0%);
+   background: linear-gradient(-45deg, #ee7752, var(--secondary-indigo), #23a6d5, #23d5ab);
+   background-size: 400% 400%;
+   animation: gradient 10s ease infinite;
 }
 
-.about_info,
-.about_image {
+@keyframes gradient {
+   0% {
+      background-position: 0% 50%;
+   }
+   50% {
+      background-position: 100% 50%;
+   }
+   100% {
+      background-position: 0% 50%;
+   }
+}
+
+.projects_info,
+.projects_image {
    flex: 1;
 }
 
-.about_info {
+.projects_info {
    padding: 2rem 3rem;
    color: var(--primary-white);
 }
 
-.about_info h3 {
+.projects_info h3 {
    font-size: 2rem;
    font-weight: 600;
    line-height: 40px;
@@ -26,7 +40,7 @@
    opacity: 0.9;
 }
 
-.about_info p {
+.projects_info p {
    margin-top: 20px;
    font-size: 1rem;
    font-weight: 400;
@@ -36,17 +50,16 @@
    opacity: 0.7;
 }
 
-.about_image {
+.projects_image {
    max-width: 100%;
    height: 100%;
-   background-image: url("https://ik.imagekit.io/bftee4gsu2d/Brhino/tr:f-auto/about-us-image_tH1F8BQvOI.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1676203187461");
    background-repeat: no-repeat;
    background-size: cover;
-   background-position: center center;
+   background-image: url("https://ik.imagekit.io/bftee4gsu2d/Brhino/tr:f-auto/project-image_L5GV-JORm.jpg?updatedAt=1676203188165");
 }
 
 @media only screen and (max-width: 1048px) {
-   .about_container {
+   .projects_container {
       display: grid;
       grid-auto-rows: auto 200px;
       height: 100%;
@@ -54,22 +67,22 @@
       justify-content: unset;
    }
 
-   .about_info {
+   .projects_info {
       padding: 1rem;
    }
 
-   .about_info p {
+   .projects_info p {
       max-width: 100%;
    }
 }
 
 @media only screen and (max-width: 520px) {
-   .about_info h3 {
+   .projects_info h3 {
       font-size: 1rem;
       line-height: 20px;
    }
 
-   .about_info p {
+   .projects_info p {
       margin-top: 10px;
       font-size: 14px;
       line-height: 18px;

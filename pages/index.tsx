@@ -9,19 +9,19 @@ import { Suspense } from "react";
 
 import Navbar from "@components/Navbar/Navbar";
 import { Linkedin } from "@components/Icons/Icons";
-import { CARD_CONTENTS, PROJECTS, CLIENTS, TEAM } from "../app/utils/constants";
+import { CARD_CONTENTS, CLIENTS, TEAM } from "../app/utils/constants";
 
 import { baseURL } from "../app/utils/constants";
 
 import styles from "../styles/Home.module.css";
 
-const ServicesCard = dynamic(() => import("@components/ServicesCard/ServicesCard"), { ssr: true });
 const Clients = dynamic(() => import("@components/Clients/Clients"), { ssr: true });
 const AboutUs = dynamic(() => import("@components/AboutUs/AboutUs"), { ssr: true });
-const SliderComp = dynamic(() => import("@components/Slider/SliderComp"), { ssr: true });
-const ContactUs = dynamic(() => import("@components/ContactUs/ContactUs"), { ssr: true });
-const QuoteForm = dynamic(() => import("@components/QuoteForm/QuoteForm"), { ssr: true });
 const UploadCV = dynamic(() => import("@components/UploadCV/UploadCV"), { ssr: true });
+const Projects = dynamic(() => import("@components/Projects/Projects"), { ssr: true });
+const QuoteForm = dynamic(() => import("@components/QuoteForm/QuoteForm"), { ssr: true });
+const ContactUs = dynamic(() => import("@components/ContactUs/ContactUs"), { ssr: true });
+const ServicesCard = dynamic(() => import("@components/ServicesCard/ServicesCard"), { ssr: true });
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -87,24 +87,15 @@ const Home: NextPage = () => {
                   <div className={styles.services_cards_container}>{renderServicesCards()}</div>
                </div>
             </section>
-            <section className={styles.projects_container} id="projects">
-               <div className={styles.services_wrapper}>
-                  <h3>Project Portfolio</h3>
-                  <p>
-                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, officia molestias! At
-                     laudantium commodi consequuntur, soluta exercitationem possimus, dolorem, vitae odit rem
-                     perferendis quidem incidunt sint error? Sint, nobis expedita?
-                  </p>
-                  <SliderComp content={PROJECTS} />
-               </div>
-            </section>
+            <Projects />
             <section className={styles.clients_container}>
                <div className={styles.services_wrapper}>
                   <h3>Our Trusted Clients</h3>
                   <p>
-                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, officia molestias! At
-                     laudantium commodi consequuntur, soluta exercitationem possimus, dolorem, vitae odit rem
-                     perferendis quidem incidunt sint error? Sint, nobis expedita?
+                     Our long-standing relationships with these trusted clients are a testament to our
+                     commitment to delivering quality and reliable services that meet their expectations. We
+                     take pride in the trust they have placed in us, and we continue to work hard to maintain
+                     their satisfaction and loyalty.
                   </p>
                   <Clients clientData={CLIENTS} />
                </div>
