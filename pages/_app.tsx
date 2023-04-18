@@ -6,9 +6,6 @@ import { Analytics } from "@vercel/analytics/react";
 
 import { baseURL } from "../app/utils/constants";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 export default function App({ Component, pageProps }: AppProps) {
    return (
       <>
@@ -24,7 +21,11 @@ export default function App({ Component, pageProps }: AppProps) {
             <meta name="title" content="Brhino Energy Services" />
             <meta
                name="description"
-               content="Looking for a professional to help you with your project? Look no further! Our company offers a wide range of professional services, including Coil Tubing, Rig Maintenance, and Manpower Services. We take pride in offering top-notch work at fair and competitive prices. With our extensive experience and expertise, we ensure that every detail of your project is discussed before beginning to give you an accurate quote. Contact us today for a free estimate, and to learn more about how we can help you with your next project."
+               content="Brhino Energy Services offers professional Coil Tubing, Rig Maintenance, and Manpower Services. We provide top-notch work at fair and competitive prices. Contact us today for a free estimate and learn more about how we can help you with your next project."
+            />
+            <meta
+               name="keywords"
+               content="Brhino Energy, Brhino Energy Services, Coil Tubing, Rig Maintenance, Manpower Services, Professional services, Top-notch work, Fair prices, Competitive prices, Free estimate, Project services"
             />
             <meta name="robots" content="index, follow" />
             <meta name="theme-color" content="#000000" />
@@ -38,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <meta property="og:title" content="Brhino Energy Services" />
             <meta
                property="og:description"
-               content="Looking for a professional to help you with your project? Look no further! Our company offers a wide range of professional services, including Coil Tubing, Rig Maintenance, and Manpower Services. We take pride in offering top-notch work at fair and competitive prices. With our extensive experience and expertise, we ensure that every detail of your project is discussed before beginning to give you an accurate quote. Contact us today for a free estimate, and to learn more about how we can help you with your next project."
+               content="Brhino Energy Services offers professional Coil Tubing, Rig Maintenance, and Manpower Services. We provide top-notch work at fair and competitive prices. Contact us today for a free estimate and learn more about how we can help you with your next project."
             />
             <meta
                property="og:image"
@@ -51,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <meta property="twitter:title" content="Brhino Energy Services" />
             <meta
                property="twitter:description"
-               content="Looking for a professional to help you with your project? Look no further! Our company offers a wide range of professional services, including Coil Tubing, Rig Maintenance, and Manpower Services. We take pride in offering top-notch work at fair and competitive prices. With our extensive experience and expertise, we ensure that every detail of your project is discussed before beginning to give you an accurate quote. Contact us today for a free estimate, and to learn more about how we can help you with your next project."
+               content="Brhino Energy Services offers professional Coil Tubing, Rig Maintenance, and Manpower Services. We provide top-notch work at fair and competitive prices. Contact us today for a free estimate and learn more about how we can help you with your next project."
             />
             <meta
                property="twitter:image"
