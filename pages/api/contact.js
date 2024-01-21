@@ -1,39 +1,37 @@
-import React from "react";
-import { transporter } from "../../app/utils/nodemailer";
+// import React from "react";
+// import { transporter } from "../../app/utils/nodemailer";
 
-import { render } from "@react-email/render";
+// import { render } from "@react-email/render";
 
-import Email from "@components/Email/Email";
+// import Email from "@components/Email/Email";
 
-// @dev react-email logic using nodemailer
+// const infoEmail = process.env.NEXT_PUBLIC_NODEMAILER_INFO_EMAIL;
+// const adminEmail = process.env.NEXT_PUBLIC_NODEMAILER_ADMIN_EMAIL;
 
-const infoEmail = process.env.NEXT_PUBLIC_NODEMAILER_INFO_EMAIL;
-const adminEmail = process.env.NEXT_PUBLIC_NODEMAILER_ADMIN_EMAIL;
-
-const handler = async (req, res) => {
-   if (req.method === "POST") {
-      const { firstName, lastName, email, phone, comment } = req.body;
-      if (!firstName || !lastName || !email || !comment || !phone) {
-         return res.status(400).send({ message: "Bad request" });
-      } else {
-         const emailHtml = render(
-            <Email firstName={firstName} lastName={lastName} email={email} phone={phone} comment={comment} />
-         );
-         const mailOptions = {
-            from: adminEmail,
-            to: infoEmail,
-            subject: "BRhino Energy",
-            html: emailHtml,
-         };
-         try {
-            await transporter.sendMail(mailOptions);
-            return res.status(200).json({ success: true });
-         } catch (err) {
-            console.log(err);
-            return res.status(400).json({ message: err.message });
-         }
-      }
-   }
-   return res.status(400).json({ message: "Bad request" });
-};
-export default handler;
+// const handler = async (req, res) => {
+//    if (req.method === "POST") {
+//       const { firstName, lastName, email, phone, comment } = req.body;
+//       if (!firstName || !lastName || !email || !comment || !phone) {
+//          return res.status(400).send({ message: "Bad request" });
+//       } else {
+//          const emailHtml = render(
+//             <Email firstName={firstName} lastName={lastName} email={email} phone={phone} comment={comment} />
+//          );
+//          const mailOptions = {
+//             from: adminEmail,
+//             to: infoEmail,
+//             subject: "BRhino Energy",
+//             html: emailHtml,
+//          };
+//          try {
+//             await transporter.sendMail(mailOptions);
+//             return res.status(200).json({ success: true });
+//          } catch (err) {
+//             console.log(err);
+//             return res.status(400).json({ message: err.message });
+//          }
+//       }
+//    }
+//    return res.status(400).json({ message: "Bad request" });
+// };
+// export default handler;
