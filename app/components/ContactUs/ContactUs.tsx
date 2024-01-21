@@ -59,7 +59,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                   </span>
                </Tooltip>
             </p>
-            <p className={poppins.className}>
+            {/* <p className={poppins.className}>
                <span>
                   <Email color={"var(--primary-white)"} />
                </span>
@@ -74,7 +74,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                      <Copy color={"var(--primary-white)"} />
                   </span>
                </Tooltip>
-            </p>
+            </p> */}
             <p className={poppins.className}>
                <span>
                   <Phone color={"var(--primary-white)"} />

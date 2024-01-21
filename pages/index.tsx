@@ -17,9 +17,9 @@ import styles from "../styles/Home.module.css";
 
 const Clients = dynamic(() => import("@components/Clients/Clients"), { ssr: true });
 const AboutUs = dynamic(() => import("@components/AboutUs/AboutUs"), { ssr: true });
-const UploadCV = dynamic(() => import("@components/UploadCV/UploadCV"), { ssr: true });
+// const UploadCV = dynamic(() => import("@components/UploadCV/UploadCV"), { ssr: true });
 const Projects = dynamic(() => import("@components/Projects/Projects"), { ssr: true });
-const QuoteForm = dynamic(() => import("@components/QuoteForm/QuoteForm"), { ssr: true });
+// const QuoteForm = dynamic(() => import("@components/QuoteForm/QuoteForm"), { ssr: true });
 const ContactUs = dynamic(() => import("@components/ContactUs/ContactUs"), { ssr: true });
 const ServicesCard = dynamic(() => import("@components/ServicesCard/ServicesCard"), { ssr: true });
 
@@ -133,7 +133,7 @@ const Home: NextPage = () => {
                </div>
             </section>
             <ContactUs />
-            <section className={styles.form_container}>
+            {/* <section className={styles.form_container}>
                <div className={styles.services_wrapper}>
                   <h3>Get a quote</h3>
                   <p>
@@ -144,8 +144,8 @@ const Home: NextPage = () => {
                   </p>
                   <QuoteForm />
                </div>
-            </section>
-            <section className={styles.careers_container} id="careers">
+            </section> */}
+            {/* <section className={styles.careers_container} id="careers">
                <div className={styles.services_wrapper}>
                   <h3>Brhino Careers</h3>
                   <p>
@@ -156,7 +156,7 @@ const Home: NextPage = () => {
                   </p>
                   <UploadCV />
                </div>
-            </section>
+            </section> */}
             <footer className={styles.footer_container}>
                <div className={styles.socials}>
                   <Link
