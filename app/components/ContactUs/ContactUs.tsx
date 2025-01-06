@@ -63,14 +63,14 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                <span>
                   <Email color={"var(--primary-white)"} />
                </span>
-               info@brhinoenergy.com{" "}
+               info@brhinoenergy.in{" "}
                <Tooltip
                   title={copied ? "Email copied 👍🏻" : "Copy to clipboard"}
                   color={copied ? "#16A34A" : "var(--secondary-indigo)"}
                   placement={size && size <= 520 ? "top" : "rightTop"}
                   overlayInnerStyle={{ color: "var(--primary-white)", fontFamily: "inherit" }}
                >
-                  <span className={styles.copy_icon} onClick={() => copyToClipboard("info@brhinoenergy.com")}>
+                  <span className={styles.copy_icon} onClick={() => copyToClipboard("info@brhinoenergy.in")}>
                      <Copy color={"var(--primary-white)"} />
                   </span>
                </Tooltip>

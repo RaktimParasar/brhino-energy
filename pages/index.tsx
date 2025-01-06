@@ -168,7 +168,7 @@ const Home: NextPage = () => {
                   </Link>
                </div>
                <div className={styles.copyright_info}>
-                  <span className={styles.copyright}>&copy;</span> 2023 All Rights Reserved by Brhino Energy
+                  <span className={styles.copyright}>&copy;</span> 2025 All Rights Reserved by Brhino Energy
                   Services
                </div>
             </footer>
